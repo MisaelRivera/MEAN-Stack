@@ -1,0 +1,5 @@
+.acordion-content,
+.acordion-container {
+    box-shadow: 1px 0px 5px #aaa;
+    padding: 0.5rem 1rem;
+}

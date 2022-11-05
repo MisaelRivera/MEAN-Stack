@@ -1,0 +1,12 @@
+textarea {
+    width: 80%;
+    display: block;
+    margin: auto;
+    border: 1px solid transparent;
+    border-bottom: 4px solid #ccc;
+}
+
+textarea:focus {
+    border-bottom: 4px solid rgb(46, 144, 144);
+    outline: none;
+}
