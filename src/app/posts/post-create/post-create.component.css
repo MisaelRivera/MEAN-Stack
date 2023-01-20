@@ -10,3 +10,11 @@ textarea:focus {
     border-bottom: 4px solid rgb(46, 144, 144);
     outline: none;
 }
+
+input.ng-invalid.ng-touched {
+    border: 2px solid firebrick;
+}
+
+textarea.ng-invalid.ng-touched {
+    border-bottom: 2px solid firebrick;
+}
