@@ -6,7 +6,10 @@
             <div class="acordion-content hidden" >
                 {{ post.content }}
                 <button class="btn btn-primary">Edit</button>
-                <button class="btn btn-danger">Delete</button>
+                <button 
+                    class="btn btn-danger" 
+                    [id]="post.id"
+                    (click)="onDeletePost($event)">Delete</button>
             </div>
         </div>
     </div>

@@ -11,6 +11,7 @@ import { PostCreateComponent } from './posts/post-create/post-create.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { PostListComponent } from './posts/post-list/post-list.component';
     FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    AppRoutingModule,
     MatInputModule,
     MatCardModule,
   ],

@@ -1,8 +1,26 @@
 header {
     padding: 2rem;
     background-color: rgb(34, 67, 134);
+    display: flex;
+    justify-content: space-between;
 }
 
 h1 {
     color: white;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.active {
+    color: rgba(89, 156, 69, 0.993);
 }

@@ -30,4 +30,17 @@ app.get('/api/posts', async (req, res, next) => {
     });
 });
 
+app.delete('/api/posts/:id', async (req, res, next) => {
+    await Post.destroy({
+        where: {
+            id: req.params.id,
+        }
+    });
+    const posts = await Post.findAll();
+    res.status(202).json({
+        message: 'A post was deleted successfully',
+        posts,
+    });
+});
+
 module.exports = app;

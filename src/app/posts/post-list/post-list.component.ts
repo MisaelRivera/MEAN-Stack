@@ -27,6 +27,12 @@ export class PostListComponent implements OnInit, OnDestroy {
 		this.postsSub.unsubscribe();
 	}
 
+	onDeletePost (event: Event) {
+		const button = (<HTMLElement>event.target);
+		const id = parseInt(button.id);
+		this.postsService.deletePost(id);
+	}
+
 	onShowContent (event: Event) {
 		const content = (<HTMLElement>event.currentTarget).children[1];
 		content.classList.toggle('hidden');
