@@ -10,7 +10,7 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Headers', 
     'Origin, X-Requested-With, Content-Type, Accept');
     res.setHeader('Access-Control-Alllow-Methods',
-    'GET, POST, PATCH, DELETE, OPTIONS');
+    'GET, POST, PATCH, PUT, DELETE, OPTIONS');
     next();
 });
 
@@ -19,6 +19,16 @@ app.post('/api/posts', async(req, res, next) => {
     console.log( typeof await Post.create({ title: post.title, content: post.content}));
     res.status(201).json({
         message: 'Post added successfully',
+    });
+});
+
+app.put('/api/posts/:id', async (req, res, next) => {
+    console.log(req.body);
+    console.log(req.params);
+    let post = { title: req.body.title, content: req.body.content };
+    await Post.update(post, { where: { id: req.params.id } });
+    res.status(200).json({
+        message: 'Post updated successfully!'
     });
 });
 

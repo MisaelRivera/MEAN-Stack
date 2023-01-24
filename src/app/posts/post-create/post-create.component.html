@@ -6,8 +6,8 @@
                     <input 
                         type="text" 
                         class="form-control"
+                        [ngModel]="post.title"
                         #title="ngModel"
-                        ngModel
                         name="title"
                         required
                         placeholder="Post title">
@@ -22,8 +22,8 @@
                 <textarea 
                     rows="5" 
                     name="content"
+                    [ngModel]="post.content"
                     #content="ngModel"
-                    ngModel
                     required
                     placeholder="Post content"> </textarea>
                     <ul 
@@ -37,7 +37,13 @@
                 <div class="pl-3 pb-3">
                     <button 
                         type="submit"
-                        class="btn btn-primary">Save Post</button>
+                        *ngIf="isCreateMode; else elseIsCreatedMode"
+                        class="btn btn-success">Save Post</button>
+                    <ng-template #elseIsCreatedMode>
+                        <button 
+                            type="submit"
+                            class="btn btn-primary">Edit Post</button>
+                    </ng-template>
                 </div>
             </form>
         </div>

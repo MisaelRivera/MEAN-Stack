@@ -5,7 +5,9 @@
             <img [src]="downArrowPath" class="sm-icon ml-4" alt="">
             <div class="acordion-content hidden" >
                 {{ post.content }}
-                <button class="btn btn-primary">Edit</button>
+                <a 
+                    class="btn btn-primary" 
+                    [routerLink]="['/edit', post.id]">Edit</a>
                 <button 
                     class="btn btn-danger" 
                     [id]="post.id"

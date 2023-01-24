@@ -42,12 +42,15 @@ export class PostService {
             });
     }
 
-    getPost(id: number): Post | undefined {
-        const filteredPosts = this.posts.filter(post => post.id === id);
-        if (filteredPosts.length > 0) {
-            return filteredPosts[0];
-        }
-        return undefined;
+    getPost(id: string) {
+        return <Post>{...this.posts.find(p => p.id === parseInt(id))};
+    }
+
+    updatePost (id: string, title: string, content: string) {
+        const post = {id, title, content};
+        this.http
+        .put<{ message: string }>(`http://localhost:3000/api/posts/${id}`, post)
+        .subscribe(responseData => console.log(responseData.message));
     }
 
     getLastAddedPost () {
